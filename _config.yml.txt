@@ -1,0 +1,6 @@
+title: [S. E. Skelton]
+description: [basically just a place to learn html coding and throw semi-respectable writing]
+
+remote_theme: pages-themes/time-machine@v0.2.0
+plugins:
+- jekyll-remote-theme 
