@@ -16,12 +16,12 @@ opacity: 1.0;
 /* make some different types of columns */
 .columnbig {
   float: left;
-  width: 66.66%;
+  width: 50%;
 }
 
 .columnsmall {
   float: left;
-  width: 33.33%;
+  width: 50%;
 }
 
 .row::after {
@@ -63,7 +63,7 @@ text-align:left;
 
 
 dt {
-margin: 0;
+margin: 20px;
     padding: 0 0 0.5em 0;
 display: list-item;
   list-style-type: square;
@@ -106,28 +106,66 @@ a.itemtext {
 text-decoration: none; 
 }
 
+/* Navigation Menu */  
+nav ul {  
+    list-style: none; /* Remove bullet points */  
+    display: flex; /* Arrange links horizontally (flexbox) */  
+    gap: 2rem; /* Space between links */  
+}  
+
+nav a {  
+    color: white;  
+    font-weight: bold;  
+    padding: 0.5rem 0; /* Vertical padding for hover effect */  
+}  
+
+/* Highlight active page */  
+
+/*
+nav a.active {  
+    border-bottom: 3px solid OrangeRed;  Orange underline 
+}  
+*/
+
+nav a:hover {  
+    color: OrangeRed; /* Orange color on hover */  
+}  
+
+/* Responsive Navigation (Mobile) */  
+@media (max-width: 768px) {  
+    nav ul {  
+        flex-direction: column; /* Stack links vertically on mobile */  
+        gap: 1rem;  
+        text-align: center;  
+    }  
+}  
 ul {
-position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
-ul.links-class {
-background-color: OrangeRed; 
   list-style-type: none;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-}
-
-.links-class li {
-  display: inline-block;
-  font-size: 20px;
-  padding: 20px;
-}
-
-.active {
+  padding: 10px;
+  overflow: hidden;
   background-color: WhiteSmoke;
-  color: white;
+  top: 0;
+  width: 100%;
 }
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: OrangeRed;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover:not(.active) {
+  background-color: DimGrey;
+}
+
+/*
+ul li a.active {
+  background-color: DimGrey;
+}
+*/
