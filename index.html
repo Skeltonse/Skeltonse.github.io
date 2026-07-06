@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 
-<html lang=”en”>
+<html lang="en">
 
   <head>
 
-    <meta charset=”UTF-8″>
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
-    <meta http-equiv=”X-UA-Compatible” content=”personal-webpage” name="tbd">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Shawn E. S. Skelton: quantum information PhD student.">
     <link rel="stylesheet" href="styles.css">
     <title>S. E. S. Skelton</title>
 
@@ -16,18 +16,18 @@
 
 
 <main>  
-<div class="header">
-<h1 title="introduction">Shawn E. S. Skelton</h1>  
-</div>
+<header class="header">
+<h1>Shawn E. S. Skelton</h1>  
+</header>
 
 
 
 <nav> 
 <ul>
-<li><a href="index.html" class="active">Home</a></li>  
+<li><a href="index.html">Home</a></li>  
   <li><a href="qethics.html">Quantum Outreach</a></li>
 <li><a href="profphysics.html">Professional Life (Physics) </a></li>
-<li><a href="profphil.html">Professional Life (Philosophy) </a></li>
+<!--<li><a href="profphil.html">Professional Life (Philosophy) </a></li>-->
 <li><a href="random.html">Random Writings </a></li>
 </ul>
 </nav> 
@@ -36,11 +36,11 @@
 <h2 id="about-me"> About Me </h2>
 <div class="row">
 <div class="columnsmall">
-       <img src="skelton-work-photo.JPG" style="width:100%; border-radius: 20%;" alt="the website author caught in exasperation at being photographed" object-fit: cover; >
+       <img src="skelton-work-photo.JPG" class="profile-photo" alt="the website author caught in exasperation at being photographed">
 </div>
 <div class="columnbig">
 <p> Professionally, I am a PhD student in the quantum information group at the University of Leibniz in Hanover. I am also studying for a MA in philosophy of science. Personally, I am a Canadian living in Germany and an inveterate literature nerd. This website is a collection of my writing and some resources related to my work. <br>
-It is a work in progress, but frankly so is my life. </p>
+ </p>
 </div>
 </div>	
 
@@ -49,15 +49,25 @@ It is a work in progress, but frankly so is my life. </p>
 	
 
 
-<div class="footer">
+<footer class="footer">
 <address id="contact-info">
 Written by Shawn Skelton<br>
 You can reach me at:<br>
-shawn.skelton@itp.uni-hannover.de<br>
+<a href="mailto:shawn.skelton@itp.uni-hannover.de">shawn.skelton [at] itp.uni-hannover.de</a><br>
 I use they/them pronouns in English, and any pronouns in German<br>
 </address> 
-</div>
+</footer>
 
     </main>
-  </body>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentPage = location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll("nav a").forEach(function (link) {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+</body>
 </html>

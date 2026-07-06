@@ -24,6 +24,20 @@ opacity: 1.0;
   width: 50%;
 }
 
+/* Wider text / narrower image pairing, for pages with long text next to a photo */
+.column-image {
+  float: left;
+  width: 30%;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.column-text {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+}
+
 .row::after {
   content: "";
   display: table;
@@ -32,27 +46,19 @@ opacity: 1.0;
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width:600px) {
-  .columna {
+  .columnsmall,
+  .columnbig,
+  .column-image,
+  .column-text {
     width: 100%;
-  }
-}
-
-@media screen and (max-width:600px) {
-  .columnb {
-    width: 100%;
+    padding-right: 0;
   }
 }
 
 .footer {
-  background-color: OrangeRed;
+  background-color: LightSalmon;
   text-align: left;
   padding: 10px;
-opacity: 0.6;
-}
-
-pwithitems {
-text-align:left;
- margin: 20px;
 }
 
 p, dl {
@@ -60,6 +66,9 @@ text-align:left;
  margin: 20px;
 }
 
+dl {
+  margin-top: 2rem;
+}
 
 
 dt {
@@ -79,7 +88,7 @@ display: list-item;
   }
 
 h1 {
-color:DimGrey;
+color:WhiteSmoke;
 font-size: 40px;
 }
 
@@ -90,12 +99,49 @@ opacity: 1.0;
 font-size: 30px
 }
 
-img {
+.profile-photo {
   float: left;
-display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
+  border-radius: 20%;
+  object-fit: cover;
+}
+
+.action-photo {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Gallery: row of images on desktop, stacked on mobile */
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 20px;
+}
+
+.gallery-img {
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
 }
 
 a {
@@ -111,21 +157,22 @@ nav ul {
     list-style: none; /* Remove bullet points */  
     display: flex; /* Arrange links horizontally (flexbox) */  
     gap: 2rem; /* Space between links */  
+    background-color: DimGrey;
+    padding: 10px;
+    width: 100%;
 }  
 
 nav a {  
     color: white;  
     font-weight: bold;  
     padding: 0.5rem 0; /* Vertical padding for hover effect */  
+    text-decoration: none;
 }  
 
 /* Highlight active page */  
-
-/*
 nav a.active {  
-    border-bottom: 3px solid OrangeRed;  Orange underline 
+    border-bottom: 3px solid OrangeRed; /* Orange underline */
 }  
-*/
 
 nav a:hover {  
     color: OrangeRed; /* Orange color on hover */  
@@ -138,34 +185,4 @@ nav a:hover {
         gap: 1rem;  
         text-align: center;  
     }  
-}  
-ul {
-  list-style-type: none;
-  padding: 10px;
-  overflow: hidden;
-  background-color: WhiteSmoke;
-  top: 0;
-  width: 100%;
 }
-
-ul li {
-  float: left;
-}
-
-ul li a {
-  display: block;
-  color: OrangeRed;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul li a:hover:not(.active) {
-  background-color: DimGrey;
-}
-
-/*
-ul li a.active {
-  background-color: DimGrey;
-}
-*/
